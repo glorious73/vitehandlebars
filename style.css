@@ -28,18 +28,31 @@ body {
   flex-direction: column;
   margin: 0 auto;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 header {
   padding: 1rem;
   flex-grow: 0;
   display: flex;
-  place-content: center center;
-  place-items: center center;
+  justify-content: space-between;
+  align-items: center;
   gap: 2rem;
   width: 97vw;
   overflow-x: hidden;
-  box-shadow: 0 5px 5px rgb(54, 54, 54);
+  box-shadow: 0 2px 2px rgb(54, 54, 54);
+}
+header .logo {
+  height: 3rem;
+  width: auto;
+}
+header div {
+  display: flex;
+  gap: 1.5rem;
+}
+header button {
+  height: 3rem;
+  width: 6rem;
 }
 
 .app {
@@ -93,17 +106,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
