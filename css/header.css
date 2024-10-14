@@ -1,0 +1,83 @@
+header {
+    padding: 1rem 2rem;
+    flex-grow: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: calc(100% - 3rem);
+    overflow-x: hidden;
+    box-shadow: 0 2px 2px rgb(54, 54, 54);
+}
+
+header .logo {
+    height: 3rem;
+    width: auto;
+}
+
+header .header-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+header a.fill {
+    height: 3rem;
+    width: 6rem;
+    display: flex;
+    place-content: center center;
+    place-items: center center;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #646cff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+header a.fill:hover {
+    background-color: #868cfd;
+}
+
+header a.fill:focus,
+header a.fill:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+.header-list {
+    display: none;
+}
+
+@media screen and (max-width: 576px) {
+    header .header-links {
+        display: none;
+    }
+    header .header-links.show {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    header a.fill {
+        display: none;
+    }
+    .header-list {
+        display: flex;
+        background-color: transparent;
+        color: #fff;
+        height: 3rem;
+        width: 3rem;
+        border: none;
+        outline: none;
+    }
+    .header-list svg {
+        width: 3rem;
+        height: 3rem;
+        margin: auto;
+    }
+    .header-list:focus {
+        background-color: #1d1d1d;
+    }
+}
