@@ -4,7 +4,7 @@ This project is a sample static site generator which utilizes both Vite and Hand
 ## Purpose
 Landing pages for projects and customers.
 ## Project
-- Technology: Vite + Handlebars.
+- Technology: Vite + [Handlebars](https://github.com/alexlafroscia/vite-plugin-handlebars?tab=readme-ov-file).
 ## How To Run
 1. Clone or download the repository.
 2. Open the project.
