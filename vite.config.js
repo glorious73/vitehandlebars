@@ -1,4 +1,5 @@
 import { resolve } from 'path';
+import { build } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 
 const pageContext = {
@@ -14,11 +15,21 @@ const pageContext = {
   };
 
 export default {
-  plugins: [
-    handlebars({
-        context(pagePath) {
-            return pageContext[pagePath]
-        },
-        partialDirectory: resolve(__dirname, 'partials')
-    })],
+    build: {
+        rollupOptions: {
+            input: {
+                main: resolve(__dirname, 'index.html'),
+                about: resolve(__dirname, 'about.html'),
+                contact: resolve(__dirname, 'contact.html'),
+            }
+        }
+    },
+    plugins: [
+        handlebars({
+            context(pagePath) {
+                return pageContext[pagePath]
+            },
+            partialDirectory: resolve(__dirname, 'partials')
+        })
+    ],
 };
