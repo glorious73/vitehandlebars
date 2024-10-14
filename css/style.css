@@ -7,6 +7,9 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+  --primary-color: #189607;
+  --primary-light-color: #1eac0b;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,12 +21,10 @@ a {
   font-weight: 500;
   color: #fff;
   text-decoration: none;
-  border-bottom: 1px solid #646cff;
   transition: all 0.25s;
 }
 a:hover {
   color: #f2f2f2;
-  border-bottom: 1px solid #868cfd;
 }
 
 body {
@@ -43,6 +44,7 @@ body {
   place-content: center center;
   place-items: center center;
   text-align: center;
+  z-index: 1;
 }
 
 h1 {

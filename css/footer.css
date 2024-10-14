@@ -22,7 +22,7 @@ footer .social {
 
 footer .social a {
     background-color: #1d1d1d;
-    border: 0.5px solid #646cff;
+    border: 0.5px solid var(--primary-color);
     color: #fff;
     width: 6rem;
     height: 3rem;
@@ -35,7 +35,7 @@ footer .social a {
 }
 
 footer .social a:hover {
-    border: 0.5px solid #868cfd;
+    border: 0.5px solid var(--primary-light-color);
     color: #fff;
 }
 
