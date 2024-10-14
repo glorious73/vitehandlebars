@@ -8,6 +8,9 @@ const pageContext = {
     '/about.html': {
       title: 'About Page',
     },
+    '/contact.html': {
+      title: 'Contact Page',
+    },
   };
 
 export default {
