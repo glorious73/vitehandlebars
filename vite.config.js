@@ -29,7 +29,7 @@ export default {
             context(pagePath) {
                 return pageContext[pagePath]
             },
-            partialDirectory: resolve(__dirname, 'partials')
+            partialDirectory: resolve(__dirname, 'src/partials')
         })
     ],
 };
