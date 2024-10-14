@@ -7,7 +7,7 @@ header {
     gap: 2rem;
     width: calc(100% - 3rem);
     overflow-x: hidden;
-    box-shadow: 0 2px 2px rgb(54, 54, 54);
+    box-shadow: 0 2px 2px var(--box-shadow-color);
 }
 
 header .logo {
@@ -41,7 +41,7 @@ header a.fill {
     font-weight: 500;
     font-family: inherit;
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: var(--text-color);
     cursor: pointer;
     transition: all 0.25s;
 }
@@ -68,7 +68,7 @@ header a.fill:focus-visible {
         position: absolute;
         top: 5rem;
         left: 0;
-        background-color: #1d1d1d;
+        background-color: var(--background-dark-color);
         width: 100%;
         height: calc(100vh - 4rem);
         overflow: hidden;
@@ -111,7 +111,7 @@ header a.fill:focus-visible {
     .header-list {
         display: flex;
         background-color: transparent;
-        color: #fff;
+        color: var(--text-color);
         height: 3rem;
         width: 3rem;
         border: none;
@@ -123,6 +123,6 @@ header a.fill:focus-visible {
         margin: auto;
     }
     .header-list:focus {
-        background-color: #1d1d1d;
+        background-color: var(--background-dark-color);
     }
 }
