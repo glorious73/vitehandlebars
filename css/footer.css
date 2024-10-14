@@ -19,7 +19,6 @@ footer .social {
     display: flex;
     gap: 1.5rem;
 }
-
 footer .social a {
     background-color: #1d1d1d;
     border: 0.5px solid var(--primary-color);
@@ -33,7 +32,6 @@ footer .social a {
     border-radius: 8px;
     transition: all 0.25s;
 }
-
 footer .social a:hover {
     border: 0.5px solid var(--primary-light-color);
     color: #fff;
@@ -41,4 +39,26 @@ footer .social a:hover {
 
 footer .copy {
     color: #f2f2f2;
+}
+
+@media screen and (max-width: 576px) {
+    footer {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+    footer .social {
+        order: 1;
+        gap: 1rem;
+    }
+    footer .social a {
+        width: 4rem;
+        height: 3rem;
+    }
+    footer .logo {
+        order: 2;
+        margin-top: 2rem;
+    }
+    footer .copy {
+        order: 3;
+    }
 }
