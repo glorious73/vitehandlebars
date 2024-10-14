@@ -16,7 +16,7 @@
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
 }
 a:hover {
   color: #535bf2;
@@ -25,34 +25,47 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
+  margin: 0 auto;
   min-height: 100vh;
+}
+
+header {
+  padding: 1rem;
+  flex-grow: 0;
+  display: flex;
+  place-content: center center;
+  place-items: center center;
+  gap: 2rem;
+  width: 97vw;
+  overflow-x: hidden;
+  box-shadow: 0 5px 5px rgb(54, 54, 54);
+}
+
+.app {
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  place-content: center center;
+  place-items: center center;
+  text-align: center;
+}
+
+footer {
+  padding: 1rem;
+  flex-grow: 0;
+  display: flex;
+  place-content: center center;
+  place-items: center center;
+  gap: 2rem;
+  width: 97vw;
+  overflow-x: hidden;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
 }
 
 .card {
