@@ -29,7 +29,7 @@ footer .social a {
     display: flex;
     place-content: center center;
     place-items: center center;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     transition: all 0.25s;
 }
 footer .social a:hover {
