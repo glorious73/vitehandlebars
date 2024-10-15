@@ -115,8 +115,10 @@ input[type=radio]+label svg {
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
 }
-input[type=radio]:hover+label {
+input[type=radio]:hover+label,
+input[type=radio]:checked:hover+label {
     font-weight: bold;
+    background: var(--primary-color);
 }
 input[type=radio]:checked+label {
     outline: 0;
