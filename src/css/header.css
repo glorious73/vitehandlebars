@@ -11,12 +11,15 @@ header {
 }
 
 header .logo {
+    flex-grow: 0;
     height: 3rem;
-    width: auto;
+    width: 3rem;
 }
 
 header .header-links {
+    flex-grow: 1;
     display: flex;
+    justify-content: center;
     gap: 1.5rem;
 }
 header .header-links a {
@@ -29,13 +32,21 @@ header .header-links a.link-small {
     display: none;
 }
 
-header a.fill {
+header .header-actions {
+    flex-grow: 0;
+    width: 3.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+header .header-action {
     height: 3rem;
-    width: 6rem;
+    padding: 0 1.5rem;
     display: flex;
     place-content: center center;
     place-items: center center;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     border: 1px solid transparent;
     font-size: 1rem;
     font-weight: 500;
@@ -45,15 +56,81 @@ header a.fill {
     cursor: pointer;
     transition: all 0.25s;
 }
-
-header a.fill:hover {
+header .header-action:hover {
     background-color: var(--primary-light-color);
 }
-
-header a.fill:focus,
-header a.fill:focus-visible {
+header .header-action:focus,
+header .header-action:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
+
+/* Lang */
+.lang-selector {
+    display: flex;
+    align-items: center;
+    border: 0.5px solid var(--text-color);
+    border-radius: var(--border-radius);
+    width: 6rem;
+    padding: 0.5rem 0;
+    padding: 0;
+}
+.lang-selector.lang-selector-no-border {
+    border: none !important;
+    border-radius: 0;
+}
+input[type=radio] {
+    display: none;
+}
+input[type="radio" i] {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+input[type=radio]+label {
+    display: inline-block;
+    width: 3rem;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.25s ease;
+}
+input[type=radio]+label svg {
+    fill: var(--text-color);
+}
+[dir=ltr] input[type=radio]+label.option-one {
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+[dir=ltr] input[type=radio]+label.option-two {
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+[dir=rtl] input[type=radio]+label.option-one {
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+[dir=rtl] input[type=radio]+label.option-two {
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+input[type=radio]:hover+label {
+    font-weight: bold;
+}
+input[type=radio]:checked+label {
+    outline: 0;
+    font-weight: bold;
+    color: var(--text-color) !important;
+    background: var(--background-dark-color);
+}
+input[type=radio]:checked+label svg {
+    outline: 0;
+    color: var(--text-color) !important;
+    stroke: var(--text-color) !important;
+}
+
+/* /Lang */
 
 .header-list {
     display: none;
@@ -64,6 +141,7 @@ header a.fill:focus-visible {
         height: 3rem;
         z-index: 2;
     }
+
     header .header-links {
         position: absolute;
         top: 5rem;
@@ -74,40 +152,54 @@ header a.fill:focus-visible {
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         gap: 2rem 0;
         padding: 2rem 0;
         z-index: 3;
     }
+
     header .header-links a {
         width: 75%;
         text-align: center;
         margin: 0 auto;
         border-bottom: 1px solid var(--primary-color);
     }
+
     header .header-links a:hover {
         border-bottom: 1px solid var(--primary-light-color);
     }
+
     header .header-links a.link-small {
         display: initial;
     }
+
     header .header-links.hide {
         animation: fadeOut linear 0.25s;
         visibility: hidden;
     }
+
     header .header-links.hide a {
         animation: fadeOut linear 0.25s;
         visibility: hidden;
     }
+
     header .header-links.show {
         animation: fadeIn linear 0.25s;
         visibility: visible;
     }
+
     header .header-links.show a {
         visibility: visible;
     }
-    header a.fill {
+
+    header .header-actions {
+        width: 0.25rem;
+        justify-content: flex-start;
+    }
+    header .header-action {
         display: none;
     }
+
     .header-list {
         display: flex;
         background-color: transparent;
@@ -117,11 +209,13 @@ header a.fill:focus-visible {
         border: none;
         outline: none;
     }
+
     .header-list svg {
         width: 3rem;
         height: 3rem;
         margin: auto;
     }
+
     .header-list:focus {
         background-color: var(--background-dark-color);
     }

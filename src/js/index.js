@@ -13,6 +13,7 @@ window.Globals = {
 // followed by contact us
 function loadApp() {
     loadLang();
+    loadActiveLang();
     loadEvents();
 }
 
@@ -25,12 +26,14 @@ async function loadLang() {
         window.location = '/';
     }
     else
-        lang = localStorage.getItem("lang") || "ar";
+        lang = localize.getLang();
     const html = document.querySelector("html");
     html.setAttribute("lang", lang);
     html.setAttribute("dir", (lang == "en") ? "ltr" : "rtl");
     // elements
-    document.querySelectorAll("[data-text]").forEach(element => element.insertAdjacentHTML("afterbegin", localize.l(element.getAttribute("data-text"))));
+    document.querySelectorAll("[data-text]").forEach(element => {
+        element.innerHTML = localize.l(element.getAttribute("data-text"));
+    });
 }
 
 async function loadPreferredLang(queryString) {
@@ -50,6 +53,16 @@ async function loadPreferredLang(queryString) {
         return "ar";
 }
 
+function loadActiveLang() {
+    const currentLang = localize.getLang();
+    const langs       = document.querySelectorAll('input[name="lang"]');
+    langs.forEach(element => {
+        if(element.id == currentLang)
+            element.setAttribute("checked", "checked");
+        element.addEventListener("change", async () => await setLang(element.id));
+    });
+}
+
 function loadEvents() {
     const headerList = document.querySelector(".header-list");
     const headerListHandler = (e) => {
@@ -57,6 +70,11 @@ function loadEvents() {
         document.querySelector(".header-links").className = (Globals.isHeaderListShown) ? "header-links show" : "header-links hide";
     }
     headerList.addEventListener("click", headerListHandler);
+}
+
+async function setLang(lang) {
+    localize.setLang(lang);
+    await loadLang();
 }
 
 loadApp();
